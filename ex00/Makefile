@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # Target executable name
-NAME = brainzz
+NAME = fixed
 
 # Compiler and compiler flags
 CC = c++
@@ -19,10 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRCS =	main.cpp \
-		newZombie.cpp \
-		Zombie.cpp \
-		randomChump.cpp
-		
+		Fixed.cpp 
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
