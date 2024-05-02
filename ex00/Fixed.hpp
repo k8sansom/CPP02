@@ -9,9 +9,9 @@ class Fixed {
 		static const int	_bits = 8;
 	public:
 		Fixed();
-		Fixed(const Fixed &f);
+		Fixed(const Fixed &func);
 		~Fixed();
-		Fixed &operator=(const Fixed &f2);
+		Fixed &operator=(const Fixed &func2);
 		
 		int 	getRawBits( void ) const;
 		void	setRawBits( int const raw );
