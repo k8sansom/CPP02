@@ -15,7 +15,9 @@ Fixed::~Fixed() {
 
 Fixed &Fixed::operator=(const Fixed &func2) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits(func2.getRawBits());
+	if (this != &func2) {
+		this->setRawBits(func2.getRawBits());
+	}
 	return (*this);
 }
 
