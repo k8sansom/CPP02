@@ -1,6 +1,7 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _fixedPoint(0) {
+//OLD////////////////////////////////////////////////////////////////////////////////////////////
+Fixed::Fixed() : _rawValue(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -22,32 +23,49 @@ Fixed &Fixed::operator=(const Fixed &func2) {
 }
 
 int	Fixed::getRawBits(void) const {
-	return (_fixedPoint);
+	return (_rawValue);
 }
 
 void Fixed::setRawBits( int const raw ) {
-	this->_fixedPoint = raw;
+	this->_rawValue = raw;
 }
 
 Fixed::Fixed(const int integer) {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fixedPoint = (integer << Fixed::_bits);
+	this->_rawValue = (integer << Fixed::_bits);
 }
 
 Fixed::Fixed(const float floating) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixedPoint = roundf(floating * (1 << this->_bits));
+	this->_rawValue = roundf(floating * (1 << this->_bits));
 }
 
 float	Fixed::toFloat( void ) const {
-	return ((float)this->_fixedPoint / (float)(1 << this->_bits));
+	return ((float)this->_rawValue / (float)(1 << this->_bits));
 }
 
 int	Fixed::toInt( void ) const {
-	return (this->_fixedPoint >> this->_bits);
+	return (this->_rawValue >> this->_bits);
 }
+
+//NEW///////////////////////////////////////////////////////////////////////////////////////////
+bool	operator>(Fixed const &func) const;
+bool	operator<(Fixed const &func) const;
+bool	operator>=(Fixed const &func) const;
+bool	operator<=(Fixed const &func) const;
+bool	operator==(Fixed const &func) const;
+bool	operator!=(Fixed const &func) const;
+Fixed	operator+(Fixed const &func);
+Fixed	operator-(Fixed const &func);
+Fixed	operator*(Fixed const &func);
+Fixed	operator/(Fixed const &func);
+Fixed	&operator++();
+Fixed	operator++(int);
+Fixed	&operator--();
+Fixed	operator--(int);
+
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &func) {
 	str << func.toFloat();
-	return str;
+	return (str);
 }

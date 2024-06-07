@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 11:37:42 by ksansom           #+#    #+#             */
-/*   Updated: 2024/06/07 11:37:43 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/06/07 13:31:00 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Fixed::Fixed() : _rawValue(0) {
 }
 
 Fixed::Fixed(const Fixed &func) {
-	// std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->setRawBits(func.getRawBits());
 }
 
 Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &func2) {
@@ -33,13 +33,11 @@ Fixed &Fixed::operator=(const Fixed &func2) {
 	}
 	return (*this);
 }
-//A member function int getRawBits( void ) const; that returns the raw value of the fixed-point value.
+
 int	Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_rawValue);
 }
 
-// A member function void setRawBits( int const raw ) that sets the raw value of the fixed-point number.
 void Fixed::setRawBits( int const raw ) {
 	this->_rawValue = raw;
 }

@@ -19,7 +19,6 @@ class Fixed {
 
 		Fixed(const int integer);
 		Fixed(const float floating);
-
 		float 	toFloat( void ) const;
 		int 	toInt( void ) const;
 };

@@ -6,7 +6,7 @@
 
 class Fixed {
 	private:
-		int					_fixedPoint;
+		int					_rawValue;
 		static const int	_bits = 8;
 	public:
 		Fixed();
@@ -19,7 +19,6 @@ class Fixed {
 
 		Fixed(const int integer);
 		Fixed(const float floating);
-
 		float 	toFloat( void ) const;
 		int 	toInt( void ) const;
 
@@ -38,9 +37,7 @@ class Fixed {
 		Fixed	&operator++();
 		Fixed	operator++(int);
 		Fixed	&operator--();
-		Fixed	operator--(int);
-
-		
+		Fixed	operator--(int);	
 };
 
 std::ostream& operator<<(std::ostream& str, const Fixed& func3);
