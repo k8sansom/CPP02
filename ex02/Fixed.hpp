@@ -22,17 +22,17 @@ class Fixed {
 		float 	toFloat( void ) const;
 		int 	toInt( void ) const;
 
-		bool	operator>(Fixed const &func) const;
-		bool	operator<(Fixed const &func) const;
-		bool	operator>=(Fixed const &func) const;
-		bool	operator<=(Fixed const &func) const;
-		bool	operator==(Fixed const &func) const;
-		bool	operator!=(Fixed const &func) const;
+		bool	operator>(Fixed fixed) const;
+		bool	operator<(Fixed fixed) const;
+		bool	operator>=(Fixed fixed) const;
+		bool	operator<=(Fixed fixed) const;
+		bool	operator==(Fixed fixed) const;
+		bool	operator!=(Fixed fixed) const;
 
-		Fixed	operator+(Fixed const &func);
-		Fixed	operator-(Fixed const &func);
-		Fixed	operator*(Fixed const &func);
-		Fixed	operator/(Fixed const &func);
+		float	operator+(Fixed fixed);
+		float	operator-(Fixed fixed);
+		float	operator*(Fixed fixed);
+		float	operator/(Fixed fixed);
 
 		Fixed	&operator++();
 		Fixed	operator++(int);

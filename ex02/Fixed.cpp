@@ -49,16 +49,46 @@ int	Fixed::toInt( void ) const {
 }
 
 //NEW///////////////////////////////////////////////////////////////////////////////////////////
-bool	operator>(Fixed const &func) const;
-bool	operator<(Fixed const &func) const;
-bool	operator>=(Fixed const &func) const;
-bool	operator<=(Fixed const &func) const;
-bool	operator==(Fixed const &func) const;
-bool	operator!=(Fixed const &func) const;
-Fixed	operator+(Fixed const &func);
-Fixed	operator-(Fixed const &func);
-Fixed	operator*(Fixed const &func);
-Fixed	operator/(Fixed const &func);
+bool	Fixed::operator>(Fixed fixed) const {
+	return (this->toFloat() > fixed.toFloat());
+}
+
+bool	Fixed::operator<(Fixed fixed) const {
+	return (this->toFloat() < fixed.toFloat());
+}
+
+bool	Fixed::operator>=(Fixed fixed) const {
+	return (this->toFloat() >= fixed.toFloat());
+}
+
+bool	Fixed::operator<=(Fixed fixed) const {
+	return (this->toFloat() <= fixed.toFloat());
+}
+
+bool	Fixed::operator==(Fixed fixed) const {
+	return (this->toFloat() == fixed.toFloat());
+}
+
+bool	Fixed::operator!=(Fixed fixed) const {
+	return (this->toFloat() != fixed.toFloat());
+}
+
+float	Fixed::operator+(Fixed fixed) {
+	return (this->toFloat() + fixed.toFloat());
+}
+
+float	Fixed::operator-(Fixed fixed) {
+	return (this->toFloat() - fixed.toFloat());
+}
+
+float	Fixed::operator*(Fixed fixed) {
+	return (this->toFloat() * fixed.toFloat());
+}
+
+float	Fixed::operator/(Fixed fixed) {
+	return (this->toFloat() / fixed.toFloat());
+}
+
 Fixed	&operator++();
 Fixed	operator++(int);
 Fixed	&operator--();
