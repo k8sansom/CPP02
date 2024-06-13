@@ -10,7 +10,7 @@ class Fixed {
 		static const int	_bits = 8;
 	public:
 		Fixed();
-		Fixed(const Fixed &func);
+		Fixed(const Fixed &copy);
 		~Fixed();
 		Fixed &operator=(const Fixed &func2);
 		
@@ -29,15 +29,19 @@ class Fixed {
 		bool	operator==(Fixed fixed) const;
 		bool	operator!=(Fixed fixed) const;
 
-		float	operator+(Fixed fixed);
-		float	operator-(Fixed fixed);
-		float	operator*(Fixed fixed);
-		float	operator/(Fixed fixed);
+		float	operator+(Fixed fixed) const;
+		float	operator-(Fixed fixed) const;
+		float	operator*(Fixed fixed) const;
+		float	operator/(Fixed fixed) const;
 
-		Fixed	&operator++();
+		Fixed	operator++();
 		Fixed	operator++(int);
-		Fixed	&operator--();
-		Fixed	operator--(int);	
+		Fixed	operator--();
+		Fixed	operator--(int);
+
+		static Fixed &min(Fixed &first, Fixed &second);
+
+
 };
 
 std::ostream& operator<<(std::ostream& str, const Fixed& func3);

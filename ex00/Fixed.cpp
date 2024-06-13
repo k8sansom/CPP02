@@ -4,9 +4,9 @@ Fixed::Fixed() : _rawValue(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &func) {
+Fixed::Fixed(const Fixed &copy) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->setRawBits(func.getRawBits());
+	*this = copy;
 }
 
 Fixed::~Fixed() {
