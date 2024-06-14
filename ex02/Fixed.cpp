@@ -2,20 +2,20 @@
 
 //OLD////////////////////////////////////////////////////////////////////////////////////////////
 Fixed::Fixed() : _rawValue(0) {
-	// std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy) {
-	// std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &func2) {
-	// std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &func2)
 		this->setRawBits(func2.getRawBits());
 	return (*this);
