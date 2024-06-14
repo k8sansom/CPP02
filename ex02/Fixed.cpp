@@ -109,6 +109,32 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
+Fixed &Fixed::min(Fixed &first, Fixed &second) {
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+
+const Fixed &Fixed::min(Fixed const &first, Fixed const &second) {
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+
+Fixed &Fixed::max(Fixed &first, Fixed &second) {
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+const Fixed &Fixed::max(Fixed const &first, Fixed const &second) {
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);	
+}
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &func) {
 	str << func.toFloat();
